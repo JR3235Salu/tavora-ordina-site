@@ -23,6 +23,15 @@
     .tagline { font-family: var(--serif); font-size: 1.5rem; color: var(--muted); margin-top: 22px; font-style: italic; }
     .badges { margin-top: 18px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
     .pill { display: inline-block; background: var(--wash); border: 1px solid var(--border); border-radius: 999px; padding: 7px 18px; font-size: 0.82rem; color: var(--accent-dark); font-weight: 600; }
+    .hero-headline { font-family: var(--serif); font-size: clamp(1.7rem, 4.2vw, 2.5rem); font-weight: 600; line-height: 1.2; max-width: 720px; margin: 26px auto 0; }
+    .hero-copy em { color: var(--accent-dark); }
+    .demo-screen { max-width: 540px; margin: 30px auto 24px; background: var(--card); border: 1px solid var(--border); border-radius: 18px; box-shadow: 0 18px 44px rgba(34,31,26,0.10); padding: 0 18px 18px; text-align: left; }
+    .demo-bar { display: flex; align-items: center; gap: 6px; padding: 12px 2px; border-bottom: 1px solid var(--border); margin-bottom: 14px; }
+    .demo-bar .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--wash); border: 1px solid var(--border); }
+    .demo-title { margin-left: auto; font-size: 0.72rem; color: var(--muted); letter-spacing: 0.06em; }
+    .bubble { max-width: 82%; padding: 10px 14px; border-radius: 16px; font-size: 0.93rem; margin: 8px 0; }
+    .bubble.you { background: var(--wash); border: 1px solid var(--border); margin-left: auto; border-bottom-right-radius: 4px; color: var(--ink); }
+    .bubble.koko { background: #2b2620; color: #f3ecdd; border-bottom-left-radius: 4px; }
     .hero-copy { max-width: 640px; margin: 30px auto 0; font-size: 1.1rem; color: #4a443a; text-align: center; }
     section { padding: 54px 0 6px; }
     h2 { font-family: var(--serif); font-size: 1.9rem; text-align: center; margin-bottom: 8px; }
@@ -46,17 +55,25 @@
     .compare tr:last-child td { border-bottom: none; }
     .compare .yes { color: var(--accent-dark); font-weight: 700; font-size: 1.05rem; }
     .compare .koko-col { background: var(--wash); border-radius: 8px; }
-    .vs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)); gap: 14px; margin-bottom: 18px; }
+    table.flipped { min-width: 760px; }
+    .flipped th { font-family: 'Inter', sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 600; text-align: center; padding: 10px 8px; }
+    .flipped td { font-size: 0.85rem; line-height: 1.35; }
+    .flipped td.prod { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); white-space: nowrap; padding-right: 18px; }
+    .flipped td.prod span { display: block; font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 400; color: var(--muted); }
+    .flipped .yes small { display: block; font-weight: 400; font-size: 0.74rem; color: var(--muted); }
+    .flipped .na { color: #b9b19f; font-style: italic; }
+    .flipped .warn { color: #9a5b3c; }
+    .flipped .koko-row td { background: var(--wash); }
+    .flipped .koko-row td:first-child { border-radius: 12px 0 0 12px; border-left: 4px solid var(--accent); }
+    .flipped .koko-row td:last-child { border-radius: 0 12px 12px 0; }
+    .flipped .koko-row .prod span { color: var(--accent-dark); font-weight: 600; }
+    .vs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)); gap: 14px; margin: 22px 0 18px; }
     .vs-card { background: var(--card); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 14px; padding: 18px 20px; }
     .vs-card h3 { font-family: var(--serif); font-size: 1.1rem; margin-bottom: 6px; }
     .vs-card p { font-size: 0.9rem; color: #4a443a; }
     .vs-card em { color: var(--accent-dark); font-style: italic; }
     .compare-note { text-align: center; color: var(--muted); font-size: 0.75rem; margin-top: 10px; }
     table.compare { min-width: 680px; }
-    .hero-stats { display: flex; justify-content: center; gap: 34px; flex-wrap: wrap; margin-top: 26px; }
-    .hero-stats .stat { text-align: center; }
-    .hero-stats strong { display: block; font-family: var(--serif); font-size: 1.9rem; color: var(--accent-dark); line-height: 1.1; }
-    .hero-stats span { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.02em; }
     .feature, .vs-card { transition: transform .18s ease, box-shadow .18s ease; }
     .feature:hover, .vs-card:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(34,31,26,0.08); }
     .day { max-width: 640px; margin: 0 auto; border-left: 2px solid var(--accent); padding-left: 26px; }
@@ -82,22 +99,22 @@
     <header>
       <h1 class="wordmark">KOKO</h1>
       <span class="brandline">by Tavora Ordina</span>
-      <p class="tagline">The kitchen that keeps itself.</p>
+      <p class="hero-headline">Meet the AI that runs your family's kitchen.</p>
+      <p class="hero-copy">
+        Koko lives on your fridge and in your pockets. She knows every item your
+        home has, plans dinner from it, shops only what's missing, and keeps the
+        whole family's health — hands-free, by voice. <em>The kitchen that keeps itself.</em>
+      </p>
+      <div class="demo-screen" aria-label="A real Koko conversation">
+        <div class="demo-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="demo-title">On the fridge · 5:12 PM</span></div>
+        <div class="bubble you">"Koko, what can I make tonight?"</div>
+        <div class="bubble koko">Chicken alfredo — you have everything but parmesan. Want it in the cart?</div>
+        <div class="bubble you">"Do it. Oh — and we're out of dish soap."</div>
+        <div class="bubble koko">Both in the cart. Dinner serves five — and I swapped Maya's plate around her peanut allergy. 🧺</div>
+      </div>
       <div class="badges">
         <span class="pill">In family pilot · Waitlist opening soon</span>
         <span class="pill">⚖️ Patents pending</span>
-      </div>
-      <p class="hero-copy">
-        Koko lives on your fridge and in your family's pockets. She knows what
-        your home has, plans dinner from it, shops for what's missing, watches
-        the whole family's health — each person on their own terms — and when
-        the groceries come home, the kitchen checks itself back in.
-      </p>
-      <div class="hero-stats">
-        <div class="stat"><strong>2</strong><span>provisional patents filed</span></div>
-        <div class="stat"><strong>0</strong><span>voice recordings ever kept</span></div>
-        <div class="stat"><strong>1</strong><span>account for the whole household</span></div>
-        <div class="stat"><strong>∞</strong><span>grocery lists you'll never write</span></div>
       </div>
     </header>
 
@@ -138,7 +155,34 @@
 
     <section>
       <h2>Koko vs. everybody</h2>
-      <p class="sub">Great products own one fragment of your kitchen. Koko runs the whole thing — here's the difference, by name.</p>
+      <p class="sub">Great products own one fragment of your kitchen. Koko runs the whole thing — one glance, by name — then the longer story below.</p>
+      <div class="compare-wrap">
+        <table class="compare flipped">
+          <tr>
+            <th class="prod">&nbsp;</th><th>Knows your<br>kitchen</th><th>Plans<br>dinner</th><th>Shops</th><th>Family<br>health</th><th>Hands-free<br>voice</th><th>Recordings<br>kept</th>
+          </tr>
+          <tr>
+            <td class="prod">Instacart<span>grocery delivery</span></td>
+            <td>—</td><td>recipe carts</td><td class="yes">✓ <small>you build the cart</small></td><td>—</td><td>—</td><td class="na">no voice</td>
+          </tr>
+          <tr>
+            <td class="prod">MyFitnessPal<span>nutrition tracker</span></td>
+            <td>—</td><td>—</td><td>—</td><td>one account,<br>manual logging</td><td>—</td><td class="na">no voice</td>
+          </tr>
+          <tr>
+            <td class="prod">Alexa<span>smart speaker</span></td>
+            <td>—</td><td>—</td><td>words on a list</td><td>—</td><td class="yes">✓ <small>on its speakers</small></td><td class="warn">kept, unless<br>you opt out</td>
+          </tr>
+          <tr>
+            <td class="prod">mise<span>meal planner</span></td>
+            <td>one-time quiz</td><td>from the quiz</td><td>the whole list</td><td>one plan</td><td>—</td><td class="na">no voice</td>
+          </tr>
+          <tr class="koko-row">
+            <td class="prod">Koko<span>the whole kitchen</span></td>
+            <td class="yes">✓ living<br>inventory</td><td class="yes">✓ from your<br>shelves</td><td class="yes">✓ only<br>the gap</td><td class="yes">✓ every<br>member</td><td class="yes">✓ every<br>screen</td><td class="yes">none — ever</td>
+          </tr>
+        </table>
+      </div>
       <div class="vs-grid">
         <div class="vs-card">
           <h3>vs. Instacart</h3>
@@ -156,22 +200,6 @@
           <h3>vs. mise &amp; meal planners</h3>
           <p>Meal planners hand you a plan and a shopping list, then wish you luck. Koko checks the plan against your actual shelves first, shops only the gap — and when you cook, the kitchen updates itself. A plan that doesn't know your pantry is a guess.</p>
         </div>
-      </div>
-      <div class="compare-wrap">
-        <table class="compare">
-          <tr><th></th><th>Instacart</th><th>MyFitnessPal</th><th>Alexa</th><th>mise</th><th class="koko-col">Koko</th></tr>
-          <tr><td>Knows what's in your kitchen, in real quantities</td><td>—</td><td>—</td><td>—</td><td>one-time quiz</td><td class="yes koko-col">✓ living inventory</td></tr>
-          <tr><td>Deducts ingredients when you actually cook</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="yes koko-col">✓</td></tr>
-          <tr><td>Plans dinner from what you already own</td><td>—</td><td>—</td><td>—</td><td>from a quiz</td><td class="yes koko-col">✓ from the shelves</td></tr>
-          <tr><td>Shops only what's actually missing</td><td>you build the cart</td><td>—</td><td>adds words to a list</td><td>whole list</td><td class="yes koko-col">✓ the gap only</td></tr>
-          <tr><td>Restocks itself from a photographed receipt</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="yes koko-col">✓</td></tr>
-          <tr><td>Sets up a whole pantry from photos</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="yes koko-col">✓ &amp; judges how full</td></tr>
-          <tr><td>Logs a meal from one spoken sentence</td><td>—</td><td>search &amp; weigh</td><td>—</td><td>—</td><td class="yes koko-col">✓ macros estimated</td></tr>
-          <tr><td>Health goals per family member, charted</td><td>—</td><td>one account</td><td>—</td><td>one plan</td><td class="yes koko-col">✓ each their own</td></tr>
-          <tr><td>Knows each person's allergies at one table</td><td>—</td><td>one profile</td><td>—</td><td>one diet</td><td class="yes koko-col">✓ per member</td></tr>
-          <tr><td>Hands-free conversation, every screen</td><td>—</td><td>—</td><td>✓ on its speakers</td><td>—</td><td class="yes koko-col">✓ fridge &amp; phones</td></tr>
-          <tr><td>…without keeping voice recordings</td><td></td><td></td><td>opt-out only</td><td></td><td class="yes koko-col">✓ none exist</td></tr>
-        </table>
       </div>
       <p class="compare-note">Comparisons describe each product's core design as of October 2026. All trademarks belong to their owners — fine products, for what they do.</p>
     </section>
