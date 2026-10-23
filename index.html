@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Koko by Tavora Ordina — The heart of a well-kept home</title>
-  <meta name="description" content="Koko is a smart kitchen assistant that tracks your household inventory by voice, restocks itself from a scanned receipt, turns any cooking video into a recipe, plans meals from what you have, and builds your shopping basket. By Tavora Ordina." />
+  <title>Koko by Tavora Ordina — The kitchen that keeps itself</title>
+  <meta name="description" content="Koko is a smart kitchen assistant for the whole household: a self-keeping inventory, dinner planned from what you actually have, per-person health intelligence, allergy guardrails, and a hands-free voice that never records audio. Patents pending." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -16,33 +16,47 @@
       --wash: #f1ebdd; --serif: 'Playfair Display', Georgia, serif;
     }
     body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
-    .wrap { max-width: 960px; margin: 0 auto; padding: 0 24px; }
-    header { text-align: center; padding: 72px 0 40px; }
-    .wordmark { font-family: var(--serif); font-weight: 600; letter-spacing: 0.18em; font-size: 3.4rem; }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+    header { text-align: center; padding: 64px 0 28px; }
+    .wordmark { font-family: var(--serif); font-weight: 600; letter-spacing: 0.18em; font-size: 3.2rem; }
     .brandline { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.34em; text-transform: uppercase; color: var(--accent-dark); margin-top: 10px; }
-    .tagline { font-family: var(--serif); font-size: 1.5rem; color: var(--muted); margin-top: 26px; font-style: italic; }
-    .pilot { display: inline-block; margin-top: 22px; background: var(--wash); border: 1px solid var(--border); border-radius: 999px; padding: 8px 20px; font-size: 0.85rem; color: var(--accent-dark); font-weight: 600; }
-    .hero-copy { max-width: 620px; margin: 46px auto 0; font-size: 1.08rem; color: #4a443a; text-align: center; }
-    .mock { max-width: 420px; margin: 56px auto 0; background: #171410; border-radius: 26px; padding: 26px 22px; box-shadow: 0 24px 70px rgba(34,31,26,0.35); color: #ece5d6; }
-    .mock-time { font-family: var(--serif); font-size: 2rem; text-align: center; }
-    .mock-date { text-align: center; font-size: 0.8rem; color: #9c9283; margin-bottom: 18px; }
-    .mock-card { background: #211d16; border: 1px solid #3a3426; border-radius: 14px; padding: 14px 16px; margin-top: 10px; }
-    .mock-row { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid #3a3426; font-size: 0.9rem; }
-    .mock-row:last-child { border-bottom: none; }
-    .mock-low { color: #d76a5f; }
-    .mock-voice { margin-top: 14px; background: #2c2718; border-radius: 12px; padding: 12px 14px; font-size: 0.85rem; }
-    .mock-voice em { color: #cfae76; font-style: normal; font-weight: 600; }
-    section { padding: 70px 0 10px; }
-    h2 { font-family: var(--serif); font-size: 1.9rem; text-align: center; margin-bottom: 40px; }
-    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
-    .feature { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 26px 24px; }
-    .feature .icon { font-size: 1.8rem; }
-    .feature h3 { font-family: var(--serif); font-size: 1.15rem; margin: 12px 0 8px; }
-    .feature p { font-size: 0.94rem; color: var(--muted); }
-    .values { background: var(--wash); border-radius: 20px; padding: 48px 36px; margin-top: 70px; text-align: center; }
-    .values p { max-width: 640px; margin: 0 auto; font-size: 1.05rem; color: #4a443a; }
-    footer { text-align: center; padding: 70px 0 44px; color: var(--muted); font-size: 0.85rem; }
+    .tagline { font-family: var(--serif); font-size: 1.5rem; color: var(--muted); margin-top: 22px; font-style: italic; }
+    .badges { margin-top: 18px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .pill { display: inline-block; background: var(--wash); border: 1px solid var(--border); border-radius: 999px; padding: 7px 18px; font-size: 0.82rem; color: var(--accent-dark); font-weight: 600; }
+    .hero-copy { max-width: 640px; margin: 30px auto 0; font-size: 1.1rem; color: #4a443a; text-align: center; }
+    section { padding: 54px 0 6px; }
+    h2 { font-family: var(--serif); font-size: 1.9rem; text-align: center; margin-bottom: 8px; }
+    .sub { text-align: center; color: var(--muted); max-width: 560px; margin: 0 auto 30px; font-size: 0.98rem; }
+    /* the loop */
+    .loop-card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 26px 18px 10px; }
+    .loop-svg { display: block; width: 100%; max-width: 860px; margin: 0 auto; height: auto; }
+    /* features */
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); gap: 14px; }
+    .feature { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 18px 16px; }
+    .feature .icon { font-size: 1.5rem; }
+    .feature h3 { font-family: var(--serif); font-size: 1.04rem; margin: 8px 0 4px; }
+    .feature p { font-size: 0.88rem; color: var(--muted); }
+    /* comparison */
+    .compare-wrap { overflow-x: auto; background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 10px; }
+    table.compare { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 560px; }
+    .compare th { font-family: var(--serif); font-size: 0.95rem; padding: 12px 10px; border-bottom: 2px solid var(--border); }
+    .compare th:first-child { text-align: left; }
+    .compare td { padding: 11px 10px; text-align: center; border-bottom: 1px solid var(--border); color: var(--muted); }
+    .compare td:first-child { text-align: left; color: var(--ink); font-weight: 500; }
+    .compare tr:last-child td { border-bottom: none; }
+    .compare .yes { color: var(--accent-dark); font-weight: 700; font-size: 1.05rem; }
+    .compare .koko-col { background: var(--wash); border-radius: 8px; }
+    /* privacy strip */
+    .privacy-strip { background: #221f1a; color: #ece5d6; border-radius: 20px; padding: 40px 32px; text-align: center; }
+    .privacy-strip h2 { color: #fffdf9; }
+    .promises { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 22px; text-align: center; }
+    .promise strong { display: block; font-family: var(--serif); font-size: 1.05rem; color: #e9c87e; margin-bottom: 6px; }
+    .promise p { font-size: 0.88rem; color: #bdb4a2; }
+    .privacy-strip a { color: #e9c87e; }
+    footer { text-align: center; padding: 60px 0 44px; color: var(--muted); font-size: 0.85rem; }
     footer .fine { margin-top: 8px; font-size: 0.75rem; }
+    footer a { color: var(--accent-dark); text-decoration: none; margin: 0 8px; }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -50,103 +64,119 @@
     <header>
       <h1 class="wordmark">KOKO</h1>
       <span class="brandline">by Tavora Ordina</span>
-      <p class="tagline">The heart of a well-kept home.</p>
-      <span class="pilot">In family pilot · Waitlist opening soon</span>
-      <p class="hero-copy">
-        Koko is a smart kitchen assistant that lives on your fridge. It knows
-        what your household has, listens when you say what you've used, plans
-        dinners from what's actually in the pantry, and builds the shopping
-        basket for everything you're missing — and when the groceries come
-        home, the kitchen checks itself back in. One loop. No lists.
-      </p>
-
-      <div class="mock" aria-hidden="true">
-        <div class="mock-time">6:42 PM</div>
-        <div class="mock-date">Tuesday, September 15</div>
-        <div class="mock-card">
-          <div class="mock-row"><span>🥛 Milk</span><span>75%</span></div>
-          <div class="mock-row"><span>🥚 Eggs</span><span class="mock-low">2 left</span></div>
-          <div class="mock-row"><span>🧀 Cheese</span><span>45%</span></div>
-        </div>
-        <div class="mock-voice">
-          “Koko, I just took out a coke.”<br />
-          <em>Got it — 11 left.</em>
-        </div>
+      <p class="tagline">The kitchen that keeps itself.</p>
+      <div class="badges">
+        <span class="pill">In family pilot · Waitlist opening soon</span>
+        <span class="pill">⚖️ Patents pending</span>
       </div>
+      <p class="hero-copy">
+        Koko lives on your fridge and in your family's pockets. She knows what
+        your home has, plans dinner from it, shops for what's missing, watches
+        the whole family's health — each person on their own terms — and when
+        the groceries come home, the kitchen checks itself back in.
+      </p>
     </header>
 
     <section>
-      <h2>What Koko does</h2>
-      <div class="features">
-        <div class="feature">
-          <span class="icon">🎤</span>
-          <h3>An inventory that keeps itself</h3>
-          <p>Just say it — “Koko, we're out of dish soap” — and the pantry
-          updates. Every container drains on screen as your family uses it.</p>
-        </div>
-        <div class="feature">
-          <span class="icon">🧾</span>
-          <h3>Scan the receipt, skip the typing</h3>
-          <p>Snap the grocery receipt and the whole trip comes home digitally —
-          you review the list, uncheck what wasn't for the kitchen, and the
-          pantry restocks itself with the prices you actually paid.</p>
-        </div>
-        <div class="feature">
-          <span class="icon">🍽</span>
-          <h3>Dinner from what you have</h3>
-          <p>Ask what you can make without going to the store and get real
-          answers, portioned to your household — with your own family recipes
-          in the cookbook.</p>
-        </div>
-        <div class="feature">
-          <span class="icon">🎥</span>
-          <h3>Any video becomes a recipe</h3>
-          <p>See a dish worth making? Hand Koko the video and it becomes a full
-          recipe — ingredients, steps, honest nutrition — with the original
-          video saved right beside it for cooking night.</p>
-        </div>
-        <div class="feature">
-          <span class="icon">👩‍🍳</span>
-          <h3>Cooking night, coached</h3>
-          <p>Every scheduled meal carries its how-to: the saved video, or a
-          one-tap lesson for the dish — so the night it's your turn to cook,
-          the teacher is already on the fridge.</p>
-        </div>
-        <div class="feature">
-          <span class="icon">🛒</span>
-          <h3>Shopping that thinks</h3>
-          <p>Tell it your standards — all natural, no dyes, American sourced —
-          and Koko builds the basket, priced per unit, ready to hand to your
-          favorite retailer.</p>
-        </div>
-        <div class="feature">
-          <span class="icon">🔄</span>
-          <h3>The loop closes itself</h3>
-          <p>When the order you approved is delivered, Koko already knows —
-          the kitchen checks itself back in the moment groceries cross the
-          doorstep. Rolling out with retail partners.</p>
-        </div>
-        <div class="feature">
-          <span class="icon">🖼</span>
-          <h3>The family hub</h3>
-          <p>Between meals, Koko is a photo frame, a calendar, and the place
-          the whole household stays in sync — no more paper on the fridge.</p>
-        </div>
+      <h2>One loop, no lists</h2>
+      <p class="sub">Everything feeds the next thing. That's the whole idea — and the patent.</p>
+      <div class="loop-card">
+        <svg class="loop-svg" viewBox="0 0 880 300" role="img" aria-label="The Koko loop">
+          <defs>
+            <marker id="arr" markerWidth="9" markerHeight="9" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 z" fill="#a5824a"/></marker>
+          </defs>
+          <g font-family="Inter, sans-serif">
+            <rect x="20"  y="90" width="150" height="86" rx="14" fill="#f1ebdd" stroke="#e7e0d2"/>
+            <text x="95" y="126" text-anchor="middle" font-size="24">🧊</text>
+            <text x="95" y="150" text-anchor="middle" font-size="13" font-weight="600" fill="#221f1a">Koko knows</text>
+            <text x="95" y="166" text-anchor="middle" font-size="11" fill="#7c7365">every shelf, every level</text>
+            <rect x="240" y="90" width="150" height="86" rx="14" fill="#f1ebdd" stroke="#e7e0d2"/>
+            <text x="315" y="126" text-anchor="middle" font-size="24">🍽</text>
+            <text x="315" y="150" text-anchor="middle" font-size="13" font-weight="600" fill="#221f1a">Dinner plans itself</text>
+            <text x="315" y="166" text-anchor="middle" font-size="11" fill="#7c7365">from what you have</text>
+            <rect x="460" y="90" width="150" height="86" rx="14" fill="#f1ebdd" stroke="#e7e0d2"/>
+            <text x="535" y="126" text-anchor="middle" font-size="24">🛒</text>
+            <text x="535" y="150" text-anchor="middle" font-size="13" font-weight="600" fill="#221f1a">The cart fills itself</text>
+            <text x="535" y="166" text-anchor="middle" font-size="11" fill="#7c7365">only what's missing</text>
+            <rect x="680" y="90" width="150" height="86" rx="14" fill="#f1ebdd" stroke="#e7e0d2"/>
+            <text x="755" y="126" text-anchor="middle" font-size="24">🧾</text>
+            <text x="755" y="150" text-anchor="middle" font-size="13" font-weight="600" fill="#221f1a">Groceries check in</text>
+            <text x="755" y="166" text-anchor="middle" font-size="11" fill="#7c7365">snap the receipt — done</text>
+            <line x1="170" y1="133" x2="232" y2="133" stroke="#a5824a" stroke-width="2.5" marker-end="url(#arr)"/>
+            <line x1="390" y1="133" x2="452" y2="133" stroke="#a5824a" stroke-width="2.5" marker-end="url(#arr)"/>
+            <line x1="610" y1="133" x2="672" y2="133" stroke="#a5824a" stroke-width="2.5" marker-end="url(#arr)"/>
+            <path d="M 755 176 C 755 250, 95 250, 95 184" fill="none" stroke="#a5824a" stroke-width="2.5" stroke-dasharray="7 6" marker-end="url(#arr)"/>
+            <text x="425" y="262" text-anchor="middle" font-size="12" font-style="italic" fill="#856733">cooking a meal puts its ingredients back into the math — the loop never breaks</text>
+          </g>
+        </svg>
       </div>
+    </section>
 
-      <div class="values">
-        <h2 style="margin-bottom: 18px;">Why we're building it</h2>
-        <p>
-          Families everywhere want the same things: to eat clean, waste less,
-          source closer to home, and know exactly what they're feeding their
-          children — without spending Sunday planning it all. Koko exists so a
-          well-kept home keeps itself.
-        </p>
+    <section>
+      <h2>What Koko does</h2>
+      <p class="sub">The one-minute tour.</p>
+      <div class="features">
+        <div class="feature"><span class="icon">🎤</span><h3>Talks everywhere, hands-free</h3>
+          <p>“Koko, we're out of dish soap.” Any room, any screen, full hands — and she holds a conversation, no wake word to reply.</p></div>
+        <div class="feature"><span class="icon">🧊</span><h3>An inventory that keeps itself</h3>
+          <p>Every container drains on screen as the family uses it. Cooking deducts the ingredients automatically.</p></div>
+        <div class="feature"><span class="icon">📸</span><h3>Count the kitchen by camera</h3>
+          <p>Photograph your shelves — Koko names each product and judges how full it is. A whole pantry set up in minutes.</p></div>
+        <div class="feature"><span class="icon">🧾</span><h3>Receipts restock the house</h3>
+          <p>Snap the grocery receipt; you review the list, uncheck what wasn't the kitchen's, and everything files itself in.</p></div>
+        <div class="feature"><span class="icon">🍽</span><h3>Dinner from what you have</h3>
+          <p>Real answers portioned to your household — and “what can I make without a store run?” means exactly that.</p></div>
+        <div class="feature"><span class="icon">❤️</span><h3>A health dashboard for the family</h3>
+          <p>What everyone actually ate — each person charted against their own goal, whether that's bulking or blood pressure.</p></div>
+        <div class="feature"><span class="icon">🗣</span><h3>Tell her what you ate</h3>
+          <p>“I had a chicken salad and two ranch packets” — macros estimated, logged to the right person, counted honestly.</p></div>
+        <div class="feature"><span class="icon">🛡</span><h3>Guardrails per person</h3>
+          <p>One child's peanut allergy, another's PB&amp;J lunch. Koko warns by name — and never hard-blocks the household.</p></div>
+        <div class="feature"><span class="icon">✨</span><h3>Any recipe, bent to your health</h3>
+          <p>One tap turns lasagna low-carb or low-sodium with real culinary swaps — and tells you exactly what changed.</p></div>
+        <div class="feature"><span class="icon">🌍</span><h3>Discover real dishes</h3>
+          <p>A feed of real food from real kitchens. One tap saves it, plans it, and puts the missing pieces in your cart.</p></div>
+        <div class="feature"><span class="icon">🗳</span><h3>Family rituals, built in</h3>
+          <p>Dinner gets voted on with secret ballots. Chores earn stars with a weekly reveal — and everyone can win.</p></div>
+        <div class="feature"><span class="icon">📱</span><h3>One home, every device</h3>
+          <p>The fridge, your phones, a tablet — one household account, everything in sync, everywhere, instantly.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Why families pick Koko</h2>
+      <p class="sub">Plenty of apps hold one piece. Only Koko runs the whole kitchen.</p>
+      <div class="compare-wrap">
+        <table class="compare">
+          <tr><th></th><th>Meal apps</th><th>Nutrition apps</th><th>Smart speakers</th><th class="koko-col">Koko</th></tr>
+          <tr><td>Knows what's actually in your kitchen</td><td>—</td><td>—</td><td>—</td><td class="yes koko-col">✓</td></tr>
+          <tr><td>Plans dinner from it — and deducts when you cook</td><td>—</td><td>—</td><td>—</td><td class="yes koko-col">✓</td></tr>
+          <tr><td>Tracks health per family member, not per account</td><td>—</td><td>one user</td><td>—</td><td class="yes koko-col">✓</td></tr>
+          <tr><td>Respects each person's allergies &amp; customs</td><td>one diet</td><td>one diet</td><td>—</td><td class="yes koko-col">✓</td></tr>
+          <tr><td>Hands-free conversation on every screen</td><td>—</td><td>—</td><td>✓</td><td class="yes koko-col">✓</td></tr>
+          <tr><td>…without ever recording audio</td><td>—</td><td>—</td><td>—</td><td class="yes koko-col">✓</td></tr>
+          <tr><td>Sets up a whole pantry from photographs</td><td>—</td><td>—</td><td>—</td><td class="yes koko-col">✓</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <div class="privacy-strip">
+        <h2>Your kitchen is nobody's business</h2>
+        <div class="promises">
+          <div class="promise"><strong>No recordings. Ever.</strong><p>Koko never records, stores, or transmits audio. There's no recordings database because there are no recordings.</p></div>
+          <div class="promise"><strong>Never sold. Never shown ads.</strong><p>Your family's data isn't for sale, and no advertiser ever receives it.</p></div>
+          <div class="promise"><strong>Private, even at home.</strong><p>PINs keep votes, chores, and body stats personal — even on the shared fridge.</p></div>
+        </div>
+        <p style="margin-top:22px; font-size:0.9rem;">Read the whole thing — it's written to be read: <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></p>
       </div>
     </section>
 
     <footer>
-      © 2026 Tavora Ordina · Made in South Carolina · Patent pending
+      © 2026 Tavora Ordina, LLC · Made in South Carolina · ⚖️ Patents pending
+      <div class="fine">
+        <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a>
+      </div>
       <div class="fine">Koko is in private family pilot. Public waitlist opening soon.</div>
     </footer>
   </div>

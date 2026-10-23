@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Privacy Policy — Koko by Tavora Ordina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f6f3ec;--card:#fffdf9;--ink:#221f1a;--muted:#7c7365;--accent-dark:#856733;--border:#e7e0d2;--serif:'Playfair Display',Georgia,serif}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:40px 24px 70px}
+.home{display:inline-block;margin-bottom:26px;color:var(--accent-dark);text-decoration:none;font-weight:600;font-size:0.9rem}
+h1{font-family:var(--serif);font-size:2rem;margin-bottom:4px}
+h2{font-family:var(--serif);font-size:1.3rem;margin:30px 0 10px}
+p{margin:10px 0}
+ul{margin:10px 0 10px 22px}
+li{margin:7px 0}
+strong{color:var(--ink)}
+a{color:var(--accent-dark)}
+footer{margin-top:50px;color:var(--muted);font-size:0.8rem;text-align:center}
+</style></head><body><div class="wrap">
+<a class="home" href="index.html">← Koko</a>
+<h1>Privacy Policy</h1>
+<p><strong>Koko by Tavora Ordina</strong></p>
+<p>Effective: October 22, 2026 · Contact: hello@tavoraordina.com</p>
+<p>Koko is a household kitchen assistant. Your family's kitchen is personal, so this policy is written to be read — not skimmed past. The short version: <strong>your identity and your household's own data are never for sale — no emails, no names, no "this family's fridge." What we may do is study patterns across many households with identity stripped out — the kind of insight that says "families are switching to store brands this fall," never "the Smiths bought ketchup" — and we hold ourselves to that line in writing, below.</strong></p>
+<h2>What Koko stores, and where</h2>
+<p><strong>Your account.</strong> An email address and a password for the household account. The password is never stored as-is — only a cryptographic hash, managed by our authentication provider.</p>
+<p><strong>Your household's kitchen data.</strong> Inventory, recipes and cookbook activity, meal plans, the household meal log (what was cooked or eaten, with nutrition estimates), calendar events, chores and stars, dinner votes, shopping carts, and household member profiles (names or nicknames, a chosen avatar and color, optional dietary guardrails such as allergies and customs, optional health notes you choose to add, and — if set — a member PIN stored only as a cryptographic hash). Dietary guardrails and health notes exist solely to shape warnings and meal suggestions for your household; like everything else here, they are never sold, never shared, and never part of aggregate insights. This data lives in two places: on each signed-in device, and in your household's own partition of Koko's cloud database, so every device in the family sees the same kitchen. Access is enforced at the database level: each household can only ever read and write its own data.</p>
+<p><strong>Photos.</strong> Standby-screen photos stay on the device they were added to. They are not uploaded to Koko's cloud.</p>
+<p><strong>Receipts and schedule images.</strong> When you scan a receipt (or import a schedule or invitation), the image is sent to our AI provider to be read, and the extracted items or events come back to you for review. Koko does not keep the image after processing.</p>
+<p><strong>Voice — read this one, because it matters.</strong> Koko is not a listening post, and we built her so she <em>can't</em> become one:</p>
+<ul>
+<li><strong>Koko never records audio. Ever.</strong> There is no audio file created, stored, kept, or sent — not to us, not to anyone, not "anonymized," not "for quality purposes." There is no recordings database because there are no recordings. A conversation in your kitchen that isn't addressed to Koko is simply gone, the way sound is.</li>
+<li><strong>The wake-word check happens on your device.</strong> Speech that doesn't start with Koko's name is discarded on the spot — it is never processed further, never transmitted by Koko, never written anywhere.</li>
+<li><strong>What leaves the device is text, and only when you address her.</strong> When you say "Koko, …", the words of that one sentence — as text — travel to Koko's own server with your kitchen context so she can act. That text is used to answer you, and it is not stored as a transcript archive.</li>
+<li>For a few seconds after Koko replies, she listens for your follow-up so conversation flows naturally — the same rules apply: silence closes the window, and nothing unaddressed goes anywhere.</li>
+<li>One honest technical note: converting your speech to text is done by your device's built-in dictation service (part of your phone or browser), under its maker's own privacy terms — on many modern devices this happens entirely on the device. Koko itself handles only the resulting text, exactly as described above.</li>
+<li><strong>The microphone is always optional.</strong> Turn hands-free off in Settings and Koko only listens while you hold the button; typing works everywhere voice does.</li>
+</ul>
+<p><strong>Usage analytics.</strong> We record a small set of events to understand whether Koko is helping: that the app was opened, that a voice command was used, that a meal was cooked, that a receipt was scanned, that a vote was held. These events are deliberately content-blind — they never include which meal, which items, or anything your family typed or said. We cannot reconstruct your kitchen from our analytics, on purpose.</p>
+<h2>What Koko does NOT do</h2>
+<ul>
+<li>We do <strong>not sell or share your personal data</strong> — your email, your name, your household members, or any data identified with your household — to anyone, ever.</li>
+<li>We do <strong>not give advertisers your data.</strong> If Koko ever shows an offer or coupon (none exist today), it will be clearly labeled, matched to your household <em>inside Koko</em>, and the brand behind it learns nothing about you — not your name, not your kitchen, only how many households (in aggregate) redeemed.</li>
+<li>We do <strong>not use third-party trackers</strong> on the app.</li>
+<li>Our usage analytics do <strong>not record the contents</strong> of your kitchen, cookbook, or conversations.</li>
+<li>Your AI requests are <strong>not used to train AI models</strong> under our provider's API terms.</li>
+</ul>
+<h2>Aggregate insights (the honest part most policies hide)</h2>
+<p>Koko's long-term business includes producing <strong>de-identified, aggregated market insights</strong> — for example, how quickly households in a region replenish a category, or which kinds of recipes are rising. These insights are built from patterns across many households with all identity removed, and we commit to three hard rules:</p>
+<p>1. <strong>No identity, ever.</strong> Insights never include names, emails, member profiles, locations precise enough to identify anyone, or any single household's data.</p>
+<p>2. <strong>Crowds, not families.</strong> Every figure we produce comes from groups of households large enough that no family — including yours — can be picked out of it, and we do not attempt to re-identify anyone.</p>
+<p>3. <strong>It flows one way.</strong> Nothing a buyer of insights gives us is ever connected back to your household or used to target you.</p>
+<p>If this ever changes in substance, that's a change to this policy — and you'll hear about it in the app before it happens (see Changes, below).</p>
+<h2>The services Koko runs on</h2>
+<p>Koko runs on a small set of infrastructure providers, each seeing only what their job requires:</p>
+<ul>
+<li><strong>Supabase</strong> — hosts the database and sign-in system (data stored in the United States)</li>
+<li><strong>Vercel</strong> — serves the app itself to your devices</li>
+<li><strong>Anthropic</strong> — processes AI requests (voice understanding, recipe reading, receipt reading) via API</li>
+</ul>
+<p>Each processes data on Koko's behalf under their own privacy and security commitments; none of them is permitted to use your household data for their own purposes.</p>
+<h2>Your choices and rights</h2>
+<ul>
+<li><strong>See and edit everything.</strong> Your kitchen data is visible and editable in the app itself — that's the product.</li>
+<li><strong>Export.</strong> Settings → Backup downloads a complete copy of your household's data as a file you keep.</li>
+<li><strong>Delete.</strong> Email hello@tavoraordina.com from your account email and we will delete your household account and its cloud data. Data on your own devices is yours to clear anytime (sign out, or clear the browser's site data).</li>
+<li><strong>Voice is optional.</strong> The microphone is used only when you enable and invoke it; typing works everywhere voice does.</li>
+</ul>
+<h2>Children</h2>
+<p>Koko is a family product: household member profiles (a name, an avatar, chores, votes) are created and controlled by the adult who owns the household account. Koko does not knowingly collect personal information directly from children, and member profiles need no more than a first name or nickname.</p>
+<h2>Security</h2>
+<p>Household data is partitioned per household and enforced at the database layer; passwords and PINs are stored only as cryptographic hashes; AI provider keys are held server-side, never on devices. No system is perfectly secure, but Koko is built so that the sensitive paths are the well-worn, professionally audited ones (our providers'), not homemade.</p>
+<h2>Changes</h2>
+<p>If this policy changes in ways that matter, we'll say so in the app before the change takes effect — plainly, not buried.</p>
+<h2>Contact</h2>
+<p>hello@tavoraordina.com · Tavora Ordina, LLC · Saluda, South Carolina, USA</p>
+<footer>© 2026 Tavora Ordina, LLC · Made in South Carolina · ⚖️ Patents pending</footer>
+</div></body></html>
