@@ -14,6 +14,7 @@
       --bg: #f6f3ec; --card: #fffdf9; --ink: #221f1a; --muted: #7c7365;
       --accent: #a5824a; --accent-dark: #856733; --border: #e7e0d2;
       --wash: #f1ebdd; --serif: 'Playfair Display', Georgia, serif;
+      --sage: #5f7d54; --terra: #b05c3a; --sky: #5c7fb8;
     }
     body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
     .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
@@ -81,6 +82,28 @@
     .moment::before { content: ""; position: absolute; left: -32.5px; top: 18px; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); }
     .moment .when { font-family: var(--serif); font-weight: 700; color: var(--accent-dark); font-size: 0.95rem; display: block; margin-bottom: 2px; }
     .moment p { font-size: 0.92rem; color: #4a443a; }
+    .cta { display: inline-block; margin-top: 24px; background: var(--accent-dark); color: #fffdf9; font-weight: 600; font-size: 0.95rem; padding: 12px 28px; border-radius: 999px; text-decoration: none; box-shadow: 0 8px 22px rgba(133,103,51,0.35); transition: transform .15s ease, box-shadow .15s ease; }
+    .cta:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(133,103,51,0.4); }
+    .demo-bar .dot:nth-child(1) { background: #e8655a; border-color: #d95549; }
+    .demo-bar .dot:nth-child(2) { background: #e9b84c; border-color: #d8a73c; }
+    .demo-bar .dot:nth-child(3) { background: #71b267; border-color: #61a257; }
+    .vs-grid .vs-card:nth-child(1) { border-left-color: var(--sky); }
+    .vs-grid .vs-card:nth-child(2) { border-left-color: var(--sage); }
+    .vs-grid .vs-card:nth-child(3) { border-left-color: var(--terra); }
+    .vs-grid .vs-card:nth-child(4) { border-left-color: var(--accent); }
+    .flipped .yes { color: var(--sage); }
+    .flipped .koko-row .yes { color: #4e6b44; }
+    .feature .icon { display: inline-flex; width: 42px; height: 42px; border-radius: 13px; align-items: center; justify-content: center; background: var(--wash); }
+    .features .feature:nth-child(4n+1) .icon { background: #edf1f7; }
+    .features .feature:nth-child(4n+2) .icon { background: #eaf0e5; }
+    .features .feature:nth-child(4n+3) .icon { background: #f7e9e1; }
+    .features .feature:nth-child(4n+4) .icon { background: #f5ecd8; }
+    .moment:nth-child(odd)::before { background: var(--terra); }
+    .moment:nth-child(even)::before { background: var(--sage); }
+    .screens { display: flex; gap: 18px; overflow-x: auto; padding: 8px 4px 16px; scroll-snap-type: x mandatory; }
+    .screen { flex: 0 0 236px; scroll-snap-align: center; margin: 0; }
+    .screen img { width: 100%; border-radius: 26px; border: 1px solid var(--border); box-shadow: 0 14px 34px rgba(34,31,26,0.14); display: block; }
+    .screen figcaption { font-size: 0.78rem; color: var(--muted); text-align: center; margin-top: 10px; padding: 0 6px; }
     /* privacy strip */
     .privacy-strip { background: #221f1a; color: #ece5d6; border-radius: 20px; padding: 40px 32px; text-align: center; }
     .privacy-strip h2 { color: #fffdf9; }
@@ -107,11 +130,12 @@
       </p>
       <div class="demo-screen" aria-label="A real Koko conversation">
         <div class="demo-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="demo-title">On the fridge · 5:12 PM</span></div>
-        <div class="bubble you">"Koko, what can I make tonight?"</div>
-        <div class="bubble koko">Chicken alfredo — you have everything but parmesan. Want it in the cart?</div>
-        <div class="bubble you">"Do it. Oh — and we're out of dish soap."</div>
-        <div class="bubble koko">Both in the cart. Dinner serves five — and I swapped Maya's plate around her peanut allergy. 🧺</div>
+        <div class="bubble you">"Koko, the family picked some recipes off the Explore tab — their favorite food influencer — and I threw in one from our cookbook. The vote's in: chicken alfredo won."</div>
+        <div class="bubble koko">A worthy winner. You have everything but parmesan — it's in the cart.</div>
+        <div class="bubble you">"Oh — and we're out of dish soap."</div>
+        <div class="bubble koko">Added. One heads-up: that recipe's pesto lists peanuts, so I swapped in a peanut-free brand for Maya's plate. 🧺</div>
       </div>
+      <a class="cta" href="#tour">👀 See Koko up close</a>
       <div class="badges">
         <span class="pill">In family pilot · Waitlist opening soon</span>
         <span class="pill">⚖️ Patents pending</span>
@@ -236,6 +260,19 @@
     </section>
 
 
+
+
+    <section id="tour">
+      <h2>Koko, up close</h2>
+      <p class="sub">Real screens from the real app — this is the demo household, living its week.</p>
+      <div class="screens">
+        <figure class="screen"><img src="images/inventory.png" alt="Koko inventory — every container drawn at its real level" loading="lazy" /><figcaption>The living inventory — every container drawn at its actual level.</figcaption></figure>
+        <figure class="screen"><img src="images/explore.png" alt="Koko Explore tab — dishes from creators the family follows" loading="lazy" /><figcaption>Explore — real dishes from creators, one tap from your cookbook.</figcaption></figure>
+        <figure class="screen"><img src="images/cookbook.png" alt="Koko cookbook — ask Koko, from a video, share with friends" loading="lazy" /><figcaption>The cookbook — ask Koko, pull a recipe from a video, share yours.</figcaption></figure>
+        <figure class="screen"><img src="images/meals.png" alt="Koko meals — family dinner vote and the household plate" loading="lazy" /><figcaption>Dinner votes and the family plate — what everyone actually ate.</figcaption></figure>
+        <figure class="screen"><img src="images/health.png" alt="Koko health dashboard — per-member charts" loading="lazy" /><figcaption>Health, per person — Mason, Sarah, and Jess each charted on their own goal.</figcaption></figure>
+      </div>
+    </section>
 
     <section>
       <h2>A day with Koko</h2>
