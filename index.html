@@ -46,6 +46,24 @@
     .compare tr:last-child td { border-bottom: none; }
     .compare .yes { color: var(--accent-dark); font-weight: 700; font-size: 1.05rem; }
     .compare .koko-col { background: var(--wash); border-radius: 8px; }
+    .vs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)); gap: 14px; margin-bottom: 18px; }
+    .vs-card { background: var(--card); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 14px; padding: 18px 20px; }
+    .vs-card h3 { font-family: var(--serif); font-size: 1.1rem; margin-bottom: 6px; }
+    .vs-card p { font-size: 0.9rem; color: #4a443a; }
+    .vs-card em { color: var(--accent-dark); font-style: italic; }
+    .compare-note { text-align: center; color: var(--muted); font-size: 0.75rem; margin-top: 10px; }
+    table.compare { min-width: 680px; }
+    .hero-stats { display: flex; justify-content: center; gap: 34px; flex-wrap: wrap; margin-top: 26px; }
+    .hero-stats .stat { text-align: center; }
+    .hero-stats strong { display: block; font-family: var(--serif); font-size: 1.9rem; color: var(--accent-dark); line-height: 1.1; }
+    .hero-stats span { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.02em; }
+    .feature, .vs-card { transition: transform .18s ease, box-shadow .18s ease; }
+    .feature:hover, .vs-card:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(34,31,26,0.08); }
+    .day { max-width: 640px; margin: 0 auto; border-left: 2px solid var(--accent); padding-left: 26px; }
+    .moment { position: relative; padding: 10px 0 18px; }
+    .moment::before { content: ""; position: absolute; left: -32.5px; top: 18px; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); }
+    .moment .when { font-family: var(--serif); font-weight: 700; color: var(--accent-dark); font-size: 0.95rem; display: block; margin-bottom: 2px; }
+    .moment p { font-size: 0.92rem; color: #4a443a; }
     /* privacy strip */
     .privacy-strip { background: #221f1a; color: #ece5d6; border-radius: 20px; padding: 40px 32px; text-align: center; }
     .privacy-strip h2 { color: #fffdf9; }
@@ -75,6 +93,12 @@
         the whole family's health — each person on their own terms — and when
         the groceries come home, the kitchen checks itself back in.
       </p>
+      <div class="hero-stats">
+        <div class="stat"><strong>2</strong><span>provisional patents filed</span></div>
+        <div class="stat"><strong>0</strong><span>voice recordings ever kept</span></div>
+        <div class="stat"><strong>1</strong><span>account for the whole household</span></div>
+        <div class="stat"><strong>∞</strong><span>grocery lists you'll never write</span></div>
+      </div>
     </header>
 
     <section>
@@ -113,6 +137,46 @@
     </section>
 
     <section>
+      <h2>Koko vs. everybody</h2>
+      <p class="sub">Great products own one fragment of your kitchen. Koko runs the whole thing — here's the difference, by name.</p>
+      <div class="vs-grid">
+        <div class="vs-card">
+          <h3>vs. Instacart</h3>
+          <p>Instacart's job <em>ends</em> at your doorstep. Koko's begins there — she checks the groceries in, cooks them down ingredient by ingredient, and knows exactly what's left. A delivery app fills carts; Koko knows whether you even need one.</p>
+        </div>
+        <div class="vs-card">
+          <h3>vs. MyFitnessPal</h3>
+          <p>Trackers ask you to search databases and weigh your lunch — forever. Koko already knows what you ate, because she cooked it. And for everything else, one sentence does it: <em>"Koko, I had a chicken salad with two ranch packets."</em> Logged. To the right person.</p>
+        </div>
+        <div class="vs-card">
+          <h3>vs. Alexa</h3>
+          <p>Alexa keeps voice recordings unless you tell her not to. Koko <em>can't</em> keep what she never records — no audio is stored or sent, period. And she doesn't just add words to a list; she runs a real, quantified kitchen.</p>
+        </div>
+        <div class="vs-card">
+          <h3>vs. mise &amp; meal planners</h3>
+          <p>Meal planners hand you a plan and a shopping list, then wish you luck. Koko checks the plan against your actual shelves first, shops only the gap — and when you cook, the kitchen updates itself. A plan that doesn't know your pantry is a guess.</p>
+        </div>
+      </div>
+      <div class="compare-wrap">
+        <table class="compare">
+          <tr><th></th><th>Instacart</th><th>MyFitnessPal</th><th>Alexa</th><th>mise</th><th class="koko-col">Koko</th></tr>
+          <tr><td>Knows what's in your kitchen, in real quantities</td><td>—</td><td>—</td><td>—</td><td>one-time quiz</td><td class="yes koko-col">✓ living inventory</td></tr>
+          <tr><td>Deducts ingredients when you actually cook</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="yes koko-col">✓</td></tr>
+          <tr><td>Plans dinner from what you already own</td><td>—</td><td>—</td><td>—</td><td>from a quiz</td><td class="yes koko-col">✓ from the shelves</td></tr>
+          <tr><td>Shops only what's actually missing</td><td>you build the cart</td><td>—</td><td>adds words to a list</td><td>whole list</td><td class="yes koko-col">✓ the gap only</td></tr>
+          <tr><td>Restocks itself from a photographed receipt</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="yes koko-col">✓</td></tr>
+          <tr><td>Sets up a whole pantry from photos</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="yes koko-col">✓ &amp; judges how full</td></tr>
+          <tr><td>Logs a meal from one spoken sentence</td><td>—</td><td>search &amp; weigh</td><td>—</td><td>—</td><td class="yes koko-col">✓ macros estimated</td></tr>
+          <tr><td>Health goals per family member, charted</td><td>—</td><td>one account</td><td>—</td><td>one plan</td><td class="yes koko-col">✓ each their own</td></tr>
+          <tr><td>Knows each person's allergies at one table</td><td>—</td><td>one profile</td><td>—</td><td>one diet</td><td class="yes koko-col">✓ per member</td></tr>
+          <tr><td>Hands-free conversation, every screen</td><td>—</td><td>—</td><td>✓ on its speakers</td><td>—</td><td class="yes koko-col">✓ fridge &amp; phones</td></tr>
+          <tr><td>…without keeping voice recordings</td><td></td><td></td><td>opt-out only</td><td></td><td class="yes koko-col">✓ none exist</td></tr>
+        </table>
+      </div>
+      <p class="compare-note">Comparisons describe each product's core design as of October 2026. All trademarks belong to their owners — fine products, for what they do.</p>
+    </section>
+
+    <section>
       <h2>What Koko does</h2>
       <p class="sub">The one-minute tour.</p>
       <div class="features">
@@ -143,20 +207,18 @@
       </div>
     </section>
 
+
+
     <section>
-      <h2>Why families pick Koko</h2>
-      <p class="sub">Plenty of apps hold one piece. Only Koko runs the whole kitchen.</p>
-      <div class="compare-wrap">
-        <table class="compare">
-          <tr><th></th><th>Meal apps</th><th>Nutrition apps</th><th>Smart speakers</th><th class="koko-col">Koko</th></tr>
-          <tr><td>Knows what's actually in your kitchen</td><td>—</td><td>—</td><td>—</td><td class="yes koko-col">✓</td></tr>
-          <tr><td>Plans dinner from it — and deducts when you cook</td><td>—</td><td>—</td><td>—</td><td class="yes koko-col">✓</td></tr>
-          <tr><td>Tracks health per family member, not per account</td><td>—</td><td>one user</td><td>—</td><td class="yes koko-col">✓</td></tr>
-          <tr><td>Respects each person's allergies &amp; customs</td><td>one diet</td><td>one diet</td><td>—</td><td class="yes koko-col">✓</td></tr>
-          <tr><td>Hands-free conversation on every screen</td><td>—</td><td>—</td><td>✓</td><td class="yes koko-col">✓</td></tr>
-          <tr><td>…without ever recording audio</td><td>—</td><td>—</td><td>—</td><td class="yes koko-col">✓</td></tr>
-          <tr><td>Sets up a whole pantry from photographs</td><td>—</td><td>—</td><td>—</td><td class="yes koko-col">✓</td></tr>
-        </table>
+      <h2>A day with Koko</h2>
+      <p class="sub">Not features — a Tuesday.</p>
+      <div class="day">
+        <div class="moment"><span class="when">7:05 AM</span><p>"Koko, I'm having two eggs and toast." Logged to Dad, macros estimated, before the pan's even hot.</p></div>
+        <div class="moment"><span class="when">3:40 PM</span><p>The kids raid the pantry. The fruit snacks drain on screen — and Koko quietly notes they're getting low.</p></div>
+        <div class="moment"><span class="when">5:12 PM</span><p>"Koko, what can I make without a store run?" Three real answers, portioned for five, with the peanut warning flagged for the one kid it matters to.</p></div>
+        <div class="moment"><span class="when">5:45 PM</span><p>You cook the chicken alfredo. Every ingredient deducts itself. Nobody wrote anything down.</p></div>
+        <div class="moment"><span class="when">7:00 PM</span><p>Tomorrow's dinner goes to a secret-ballot family vote on the fridge. Democracy, with garlic bread.</p></div>
+        <div class="moment"><span class="when">9:30 PM</span><p>Koko's cart holds only what the week actually needs. Snap the receipt when it arrives — the kitchen checks itself back in, and the loop starts again.</p></div>
       </div>
     </section>
 
@@ -165,7 +227,7 @@
         <h2>Your kitchen is nobody's business</h2>
         <div class="promises">
           <div class="promise"><strong>No recordings. Ever.</strong><p>Koko never records, stores, or transmits audio. There's no recordings database because there are no recordings.</p></div>
-          <div class="promise"><strong>Never sold. Never shown ads.</strong><p>Your family's data isn't for sale, and no advertiser ever receives it.</p></div>
+          <div class="promise"><strong>Your family is never for sale.</strong><p>No names, no emails, no "this family's fridge." The only thing Koko ever shares is anonymous, neighborhood-level trends — crowds, never households.</p></div>
           <div class="promise"><strong>Private, even at home.</strong><p>PINs keep votes, chores, and body stats personal — even on the shared fridge.</p></div>
         </div>
         <p style="margin-top:22px; font-size:0.9rem;">Read the whole thing — it's written to be read: <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></p>
