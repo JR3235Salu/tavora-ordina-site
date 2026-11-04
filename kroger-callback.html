@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connecting your store — Koko by Tavora Ordina</title>
+  <meta name="robots" content="noindex" />
+  <style>
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #f6f3ec; color: #221f1a;
+           display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; text-align: center; }
+    .card { background: #fffdf9; border: 1px solid #e7e0d2; border-radius: 20px; padding: 40px 36px; max-width: 420px; margin: 20px; }
+    h1 { font-family: Georgia, serif; letter-spacing: 0.14em; font-size: 1.6rem; margin: 0 0 6px; }
+    p { color: #7c7365; font-size: 0.95rem; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>KOKO</h1>
+    <p id="msg">Connecting your store account — one moment…</p>
+  </div>
+  <script>
+    // OAuth relay: Kroger can only redirect to this registered address, but
+    // the Koko app lives elsewhere. Bounce the one-time grant code to the
+    // app that started the link (carried in state), allowing only Koko's
+    // own homes so this can never be used to redirect anywhere else.
+    (function () {
+      var p = new URLSearchParams(location.search);
+      var code = p.get('code');
+      var state = p.get('state');
+      var target = null;
+      try {
+        var s = JSON.parse(atob(state));
+        var u = new URL(s.r);
+        var okHost =
+          u.hostname === 'localhost' ||
+          u.hostname === '127.0.0.1' ||
+          /^[a-z0-9-]+\.vercel\.app$/.test(u.hostname);
+        if (okHost) target = s.r;
+      } catch (e) { /* fall through to the error message */ }
+      if (code && target) {
+        location.replace(
+          target + '?krogerCode=' + encodeURIComponent(code) + '&krogerState=' + encodeURIComponent(state)
+        );
+      } else {
+        document.getElementById('msg').textContent =
+          "Something went wrong connecting your store. Close this tab and try again from Koko's Smart Shop.";
+      }
+    })();
+  </script>
+</body>
+</html>
