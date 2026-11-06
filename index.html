@@ -104,6 +104,16 @@
     .screen { flex: 0 0 236px; scroll-snap-align: center; margin: 0; }
     .screen img { width: 100%; border-radius: 26px; border: 1px solid var(--border); box-shadow: 0 14px 34px rgba(34,31,26,0.14); display: block; }
     .screen figcaption { font-size: 0.78rem; color: var(--muted); text-align: center; margin-top: 10px; padding: 0 6px; }
+    a.pill-link { text-decoration: none; }
+    a.pill-link:hover { background: #e9e1cf; }
+    .waitlist-form { display: flex; flex-wrap: wrap; gap: 10px; max-width: 560px; margin: 0 auto; }
+    .waitlist-form input { flex: 1 1 240px; padding: 13px 16px; border: 1px solid var(--border); border-radius: 12px; font-size: 1rem; font-family: inherit; background: var(--card); color: var(--ink); }
+    .waitlist-form input.hp { position: absolute; left: -9999px; height: 0; width: 0; padding: 0; border: none; }
+    .waitlist-form button { flex: 1 1 100%; background: var(--accent-dark); color: #fffdf9; border: none; border-radius: 12px; padding: 14px; font-size: 1.02rem; font-weight: 600; cursor: pointer; }
+    .waitlist-form button:hover { background: #6f5527; }
+    .waitlist-msg { text-align: center; margin-top: 14px; font-size: 1rem; min-height: 1.4em; }
+    .hint-center { text-align: center; color: var(--muted); font-size: 0.78rem; margin-top: 8px; }
+    .hint-center a { color: var(--accent-dark); }
     /* privacy strip */
     .privacy-strip { background: #221f1a; color: #ece5d6; border-radius: 20px; padding: 40px 32px; text-align: center; }
     .privacy-strip h2 { color: #fffdf9; }
@@ -137,7 +147,7 @@
       </div>
       <a class="cta" href="#tour">👀 See Koko up close</a>
       <div class="badges">
-        <span class="pill">In family pilot · Waitlist opening soon</span>
+        <a class="pill pill-link" href="#waitlist">In family pilot · Join the beta waitlist ↓</a>
         <span class="pill">⚖️ Patents pending</span>
       </div>
     </header>
@@ -287,6 +297,56 @@
       </div>
     </section>
 
+    <section id="waitlist">
+      <h2>Bring Koko home</h2>
+      <p class="sub">
+        The founding beta is 25 families. It's free, it's early, and your
+        kitchen helps shape her. We'll email your founding code as spots open.
+      </p>
+      <form class="waitlist-form" id="waitlist-form">
+        <input type="text" name="family" placeholder="Family name (e.g. The Werts Family)" aria-label="Family name" />
+        <input type="email" name="email" required placeholder="Email address" aria-label="Email address" />
+        <input type="text" name="town" placeholder="Town &amp; state (optional)" aria-label="Town and state" />
+        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <button type="submit" id="waitlist-btn">Join the waitlist</button>
+      </form>
+      <p class="waitlist-msg" id="waitlist-msg"></p>
+      <p class="hint-center">No spam, no sharing — just your invitation. See the <a href="privacy.html">privacy policy</a>.</p>
+    </section>
+    <script>
+      document.getElementById('waitlist-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        var f = e.target;
+        if (f.website.value) return; // honeypot
+        var btn = document.getElementById('waitlist-btn');
+        var msg = document.getElementById('waitlist-msg');
+        btn.disabled = true; btn.textContent = 'Adding you…'; msg.textContent = '';
+        try {
+          var res = await fetch('https://cuskfmzxdrdkijyntjrs.supabase.co/rest/v1/rpc/waitlist_join', {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json',
+              apikey: 'sb_publishable_bFgXng8IjJw0WJ4ly4rrhA_0rCZjT7P',
+              authorization: 'Bearer sb_publishable_bFgXng8IjJw0WJ4ly4rrhA_0rCZjT7P'
+            },
+            body: JSON.stringify({ p_email: f.email.value, p_family: f.family.value, p_town: f.town.value, p_note: '' })
+          });
+          var out = await res.json();
+          if (out === 'ok') {
+            f.hidden = true;
+            msg.textContent = "🎉 You're on the list! We'll email your founding code as spots open.";
+          } else if (out === 'bad-email') {
+            msg.textContent = 'That email doesn\'t look right — give it another try?';
+          } else {
+            msg.textContent = "The list is busy today — please try again tomorrow.";
+          }
+        } catch (err) {
+          msg.textContent = 'Something hiccuped — please try again in a minute.';
+        }
+        btn.disabled = false; btn.textContent = 'Join the waitlist';
+      });
+    </script>
+
     <section>
       <div class="privacy-strip">
         <h2>Your kitchen is nobody's business</h2>
@@ -304,7 +364,7 @@
       <div class="fine">
         <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a>
       </div>
-      <div class="fine">Koko is in private family pilot. Public waitlist opening soon.</div>
+      <div class="fine">Koko is in private family pilot. <a href="#waitlist">Join the founding-beta waitlist →</a></div>
     </footer>
   </div>
 </body>
