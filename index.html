@@ -114,6 +114,10 @@
     .waitlist-msg { text-align: center; margin-top: 14px; font-size: 1rem; min-height: 1.4em; }
     .hint-center { text-align: center; color: var(--muted); font-size: 0.78rem; margin-top: 8px; }
     .hint-center a { color: var(--accent-dark); }
+    .retailer-wall { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 720px; margin: 0 auto; }
+    .retailer { background: var(--card); border: 1px solid var(--border); border-radius: 999px; padding: 8px 18px; font-size: 0.92rem; font-weight: 600; }
+    .retailer.live { border-color: #b5c9a8; }
+    .retailer.live::before { content: "● "; color: #5f7d54; font-size: 0.7rem; vertical-align: 2px; }
     /* privacy strip */
     .privacy-strip { background: #221f1a; color: #ece5d6; border-radius: 20px; padding: 40px 32px; text-align: center; }
     .privacy-strip h2 { color: #fffdf9; }
@@ -271,6 +275,32 @@
 
 
 
+
+    <section>
+      <h2>Where Koko shops</h2>
+      <p class="sub">One tap sends the family's basket into their own store's cart — their checkout, their payment, their pickup window.</p>
+      <div class="retailer-wall">
+        <span class="retailer live">Harris Teeter</span>
+        <span class="retailer live">Kroger</span>
+        <span class="retailer live">Fred Meyer</span>
+        <span class="retailer live">Ralphs</span>
+        <span class="retailer live">King Soopers</span>
+        <span class="retailer live">Fry's</span>
+        <span class="retailer live">Smith's</span>
+        <span class="retailer live">Dillons</span>
+        <span class="retailer live">QFC</span>
+        <span class="retailer live">Food 4 Less</span>
+        <span class="retailer live">Mariano's</span>
+        <span class="retailer live">Pick 'n Save</span>
+        <span class="retailer live">City Market</span>
+        <span class="retailer live">Baker's</span>
+        <span class="retailer live">Metro Market</span>
+        <span class="retailer live">Gerbes</span>
+        <span class="retailer live">JayC</span>
+        <span class="retailer live">Owen's</span>
+      </div>
+      <p class="compare-note">2,700+ stores, connected through official retailer APIs — no scraping, no markups, no middleman. More retailers on the way.</p>
+    </section>
 
     <section id="tour">
       <h2>Koko, up close</h2>
